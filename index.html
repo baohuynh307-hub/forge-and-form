@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0f0f10"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Forge &amp; Form">
 <title>Forge &amp; Form — Gym Workouts</title>
 <style>
 :root{--bg:#0f0f10;--panel:#1a1a1c;--gold:#c9a96e;--txt:#ede6da;--mut:#9b958c;--line:#2c2c2f;--dim:#5f5b55}
@@ -39,6 +39,7 @@ form.ci{display:flex;gap:8px}form.ci input{flex:1}
 .draft{border:1px solid var(--line);background:var(--panel);padding:14px;max-height:470px;overflow:auto}.draft .d{padding:6px 0;border-bottom:1px solid var(--line);font-size:13px}.draft .d b{font-weight:400;color:var(--gold)}
 #toast{position:fixed;bottom:24px;right:24px;background:var(--panel);border:1px solid var(--gold);color:var(--txt);padding:12px 18px;font-size:13px;opacity:0;transform:translateY(10px);transition:.3s;pointer-events:none;z-index:9}#toast.show{opacity:1;transform:none}
 footer{text-align:center;padding:36px;color:var(--mut);font-size:13px}
+@media(max-width:480px){html,body{overflow-x:hidden}body{padding-bottom:env(safe-area-inset-bottom)}img,svg,canvas,table{max-width:100%}input,select,textarea,button{font-size:16px}}
 </style></head><body>
 <header><h1>Forge <span>&amp;</span> Form</h1><p>Barbell, dumbbell, machine, cable, kettlebell and bodyweight training. Build plans, track sessions, and plan the next week with the coach.</p></header>
 <nav class="top"><a href="#plans">Plan</a><a href="#library">Library</a><a href="#reminders">Reminders</a><a href="#progress">Progress</a><a href="#coach">Coach</a></nav>
@@ -311,4 +312,4 @@ document.addEventListener("click",e=>{const t=e.target.closest("[data-a]");if(!t
 document.addEventListener("change",e=>{const t=e.target;if(t.dataset&&t.dataset.c&&C[t.dataset.c])C[t.dataset.c](t)});
 $("#q").addEventListener("input",rLib);$("#ci").addEventListener("submit",e=>{e.preventDefault();const v=$("#cin").value;$("#cin").value="";coachInput(v)});
 initForm();render();setInterval(tick,15000);tick();
-</script></body></html>
+</script><script>if("serviceWorker"in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js"))</script></body></html>
